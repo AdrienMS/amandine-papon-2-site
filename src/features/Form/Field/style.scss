@@ -1,0 +1,56 @@
+@import '../../../assets/style/theme.scss';
+
+.field {
+    &-container {
+        position: relative;
+        padding: 10px;
+        &.error {
+            .field-input {
+                outline-color: $error;
+                border-color: $error;
+                border-style: solid;
+                border-radius: 4px;
+            }
+            .field-label {
+                color: $error;
+            }
+        }
+        &.focus {
+            .field-label {
+                top: 0;
+                left: 0;
+                padding: 0 2px;
+                transform: scale(.6);
+            }
+            .field-input {
+                &::placeholder {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &-label {
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        background-color: white;
+        transition: .2s;
+    }
+    &-input {
+        width: calc(100% - 15px);
+        padding: 10px 5px;
+        &::placeholder {
+            opacity: 0;
+            transition: .2s;
+        }
+    }
+    &-error {
+        position: absolute;
+        bottom: 5px;
+        right: 10px;
+        padding: 0 2px;
+        font-size: .6em;
+        color: $error;
+        background-color: white;
+    }
+}

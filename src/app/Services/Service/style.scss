@@ -1,0 +1,245 @@
+@import '../../../assets/style/theme.scss';
+
+// ------------- MIXINS ------------- //
+@mixin transition($time, $property: all, $easing: ease-in) {
+    transition: $property $time $easing;
+}
+
+// ------------- VARIABLES ------------- //
+$parallax-offset: 30vh;
+$content-offset: 40vh;
+$transition-speed: 1.2s;
+$slide-number: 4;
+
+.service {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+  height: 100vh + $parallax-offset;
+  position: fixed;
+  display: inline-flex;
+  width: 100%;
+  transform: translateY($parallax-offset);
+  @include transition($transition-speed, all, cubic-bezier(0.22, 0.44, 0, 1));
+  &:first-child {
+    transform: translateY(-$parallax-offset / 2);
+    .service-wrapper {
+      transform: translateY($parallax-offset /2);
+    }
+  }
+  &-container-image {
+    width: 55vw;
+    height: 100%;
+    background-color: $primary;
+    shape-outside: polygon(0 0, calc(100% - 20vh) 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, calc(100% - 20vh) 0%, 100% 100%, 0% 100%);
+    z-index: 1;
+    .service-image {
+        width: 46vw;
+        height: 130vh;
+        object-fit: cover;
+        shape-outside: polygon(0 0, calc(100% - 20vh) 0%, calc(100% - 5vh) 100%, 0% 100%);
+        clip-path: polygon(0 0, calc(100% - 20vh) 0%, calc(100% - 5vh) 100%, 0% 100%);
+    }
+  }
+
+  &.service-mobile {
+    height: 90%;
+    width: 80%;
+    margin: 7% 5%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 2px #000000b0, inset 0 0 10px 2px #ffffffb0;
+    background-color: $background;
+    position: relative;
+    transform: none;
+    &.up-scroll {
+      transform: none;
+      .service-wrapper {
+        transform: none;
+      }
+      + .service {
+        transform: none;
+        .service-wrapper {
+          transform: none;
+        }
+      }
+    }
+    .service-container-image {
+      display: none;
+    }
+    .service-wrapper {
+      height: 100%;
+      width: 100%;
+      background-color: unset;
+      margin: 0;
+      padding: 0;
+      transform: none;
+      .service-container {
+        margin: 0;
+        height: 100%;
+        .service-title {
+          font-size: 1.2em;
+          color: #fff;
+          background-color: $primary;
+          margin: 0;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0% 100%);
+          padding: calc(40px - .6em) 0;
+        }
+        .service-content {
+          height: calc(100% - 80px);
+          margin: 0 10px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+}
+
+/* Set stacking context of slides */
+@for $i from 1 to ($slide-number + 1) {
+    .service:nth-child(#{$i}) {
+        z-index: ($slide-number + 1) - $i - 2;
+    }
+}
+
+.service {
+  &-wrapper {
+    height: 130vh;
+    width: 60vw;
+    display: flex;
+    text-align: center;
+    flex-flow: column nowrap;
+    color: #000;
+    background-color: #fff;
+    transform: translateY($content-offset);
+    will-change: transform;
+    backface-visibility: hidden;
+    padding: 0 10%;
+    margin-left: -20vh;
+    @include transition($transition-speed + .5, all, cubic-bezier(0.22, 0.44, 0, 1));
+  }
+  &-container {
+      margin-top: 50%;
+      transform: translateY(-50%);
+  }
+  &-title {
+    font-size: 2.5em;
+    line-height: 1.4;
+    color: $primary;
+  }
+  &-content {
+    ul {
+        display: inline-block;
+        text-align: left;
+    }
+  }
+}
+
+.service-right {
+    flex-direction: row-reverse;
+    .service {
+        &-container-image {
+            shape-outside: polygon(20vh 0, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(20vh 0, 100% 0%, 100% 100%, 0% 100%);
+            .service-image {
+                shape-outside: polygon(20vh 0, 100% 0%, 100% 100%, 5vh 100%);
+                clip-path: polygon(20vh 0, 100% 0%, 100% 100%, 5vh 100%);
+            }
+        }
+        &-wrapper {
+            margin-left: unset;
+            margin-right: -20vh;
+        }
+    }
+}
+
+// ------------- SET TRANSFORM VALUES ------------- //
+
+.service.up-scroll {
+  transform: translate3d(0,-$parallax-offset / 2,0);
+  .service-wrapper {
+    transform: translateY($parallax-offset / 2);
+  }
+  + .service {
+    transform: translate3d(0,$parallax-offset,0);
+    .service-wrapper {
+      transform: translateY($parallax-offset);
+    }
+  }
+}
+
+.service.down-scroll {
+  transform: translate3d(0,-(100vh + $parallax-offset),0);
+  .service-wrapper {
+    transform: translateY($content-offset);
+  }
+  + .service:not(.down-scroll) {
+    transform: translate3d(0,-$parallax-offset / 2,0);
+      .service-wrapper {
+        transform: translateY($parallax-offset / 2);
+      }
+  }
+}
+
+
+@media (max-width: 1300px) {
+  .service {
+    &-container-image {
+      width: 35vw;
+      .service-image {
+        width: 31vw;
+      }
+    }
+    &-wrapper {
+      width: 80vw;
+    }
+    &-container {
+      margin-top: 85px;
+      transform: none;
+    }
+    &-title {
+      font-size: 1.5em
+    }
+    &-content {
+      font-size: .8em;
+    }
+  }
+}
+
+@media (max-height: 600px) {
+  .service {
+    &-container-image {
+      width: 35vw;
+      .service-image {
+        width: 31vw;
+      }
+    }
+    &-wrapper {
+      width: 80vw;
+    }
+    &-container {
+      margin-top: 85px;
+      transform: none;
+    }
+    &-title {
+      font-size: 1.5em
+    }
+    &-content {
+      font-size: .8em;
+    }
+  }
+}
+
+@media (max-height: 420px) {
+  .service {
+    &-title {
+      font-size: 1em
+    }
+    &-content {
+      font-size: .7em;
+    }
+  }
+}

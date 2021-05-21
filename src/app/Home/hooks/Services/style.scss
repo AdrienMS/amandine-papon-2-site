@@ -1,0 +1,115 @@
+@import '../../../../assets/style/theme.scss';
+
+.services {
+    margin-top: -5vh;
+    margin-bottom: 200px;
+    z-index: 3;
+    .title {
+        color: $primary;
+        text-align: center;
+    }
+    .text {
+        text-align: center;
+        width: 70%;
+        margin: 0 auto 30px auto;
+    }
+    &-list {
+        position: absolute;
+        width: 70%;
+        margin: 0 15%;
+        display: flex;
+        flex-wrap: wrap;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 1440px) {
+    .services {
+        &-list {
+            width: 90%;
+            margin: 0 5%;
+        }
+    }
+}
+
+@media (max-width: 1190px) {
+    .services {
+        margin-bottom: 450px;
+        &-list {
+            width: 50%;
+            margin: 0 25%;
+        }
+    }
+}
+
+@media (max-width: 1070px) {
+    .services {
+        &-list {
+            width: 60%;
+            margin: 0 20%;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .services {
+        &-list {
+            width: 70%;
+            margin: 0 15%;
+        }
+    }
+}
+
+@media (max-width: 870px) {
+    .services {
+        &-list {
+            width: 70%;
+            margin: 0 15%;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .services {
+        &-list {
+            width: 90%;
+            margin: 0 5%;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .services {
+        margin-bottom: 950px;
+        &-list {
+            width: 70%;
+            margin: 0 15%;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+    .services {
+        &-list {
+            width: 90%;
+            margin: 0 5%;
+        }
+    }
+}
+
+@media (max-height: 400px) {
+    .services {
+        margin-bottom: 250px;
+    }
+    @media (max-width: 1190px) {
+        .services {
+            margin-bottom: 500px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .services {
+            margin-bottom: 1000px;
+        }
+    }
+}

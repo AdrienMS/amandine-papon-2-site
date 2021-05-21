@@ -1,0 +1,42 @@
+@import '../../assets/style/theme.scss';
+
+.footer {
+    width: 100%;
+    background-color: $background-dark;
+    border-top: 5px solid $primary;
+    padding-bottom: 10px;
+    &-logo {
+        width: fit-content;
+        margin: 10px auto;
+    }
+    &-bottom {
+        position: relative;
+        .text {
+            color: #fff;
+            margin-bottom: 0;
+            font-size: .8em;
+            &.author {
+                position: absolute;
+                bottom: 0;
+                left: 10px;
+            }
+            &.copyright {
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &-bottom {
+            .text {
+                &.author {
+                    position: relative;
+                    text-align: center;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

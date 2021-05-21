@@ -1,0 +1,28 @@
+{
+  "rules": {
+      "about": {
+        ".read": "true",
+        ".write": "auth != null",
+      },
+      "banner": {
+        ".read": "true",
+        ".write": "auth != null",
+      },
+      "companies": {
+        ".read": "true",
+        ".write": "auth != null",
+      },
+      "images": {
+        ".read": "true",
+        ".write": "auth != null",
+      },
+      "location": {
+        ".read": "true",
+        ".write": "auth != null",
+      },
+      "services": {
+        ".read": "true",
+        ".write": "auth != null",
+      }
+  }
+}

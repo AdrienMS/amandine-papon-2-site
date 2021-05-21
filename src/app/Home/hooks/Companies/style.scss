@@ -1,0 +1,131 @@
+@import '../../../../assets/style/theme.scss';
+
+.companies {
+    shape-outside: polygon(0 0, 100% 0, 100% calc(100% - 25vh), 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25vh), 0% 100%);
+    background-color: $primary;
+    z-index: -2;
+    &-container {
+        height: calc(30vh + 200px);
+        shape-outside: polygon(0 0, 100% 0, 100% calc(100% - 30vh), 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30vh), 0% 100%);
+        background-color: #fff;
+    }
+    .title {
+        text-align: center;
+        color: $primary;
+    }
+    &-list {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 0 10%;
+        .companies-item {
+            width: 200px;
+            margin: 0 auto;
+            &-logo {
+                width: 200px;
+                height: 200px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .companies {
+        &-container {
+            height: calc(30vh + 400px);
+        }
+        &-list {
+            width: 60%;
+            margin: 0 20%;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .companies {
+        &-list {
+            width: 60%;
+            margin: 0 20%;
+        }
+    }
+}
+
+@media (max-width: 1050px) {
+    .companies {
+        &-list {
+            width: 70%;
+            margin: 0 15%;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    .companies {
+        &-list {
+            width: 90%;
+            margin: 0 5%;
+        }
+    }
+}
+
+@media (max-width: 730px) {
+    .companies {
+        &-container {
+            height: calc(40vh + 400px);
+        }
+    }
+}
+
+@media (max-width: 666px) {
+    .companies {
+        &-container {
+            height: calc(40vh + 600px);
+        }
+    }
+}
+
+@media (max-width: 444px) {
+    .companies {
+        &-container {
+            height: calc(40vh + 1000px);
+        }
+    }
+}
+
+@media (max-height: 400px) {
+    
+    @media (max-width: 1300px) {
+        .companies {
+            &-container {
+                height: calc(30vh + 450px);
+            }
+        }
+    }
+
+    @media (max-width: 730px) {
+        .companies {
+            &-container {
+                height: calc(40vh + 450px);
+            }
+        }
+    }
+
+    @media (max-width: 666px) {
+        .companies {
+            &-container {
+                height: calc(40vh + 650px);
+            }
+        }
+    }
+
+    @media (max-width: 444px) {
+        .companies {
+            &-container {
+                height: calc(40vh + 1050px);
+            }
+        }
+    }
+}

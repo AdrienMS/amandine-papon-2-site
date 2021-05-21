@@ -1,0 +1,42 @@
+@import '../../assets/style/theme.scss';
+
+.services-page {
+    height: 100vh;
+    &-dots {
+        position: fixed;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        z-index: 5
+    }
+    &-dot {
+        content: '';
+        width: 10px;
+        height: 10px;
+        margin: 10px 0;
+        border: 2px solid lightgrey;
+        background-color: $background;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .5s;
+        &.services-page-dot-focus {
+            border: 2px solid $primary;
+            background-color: $primary-light;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .services-page {
+        margin-top: 60px;
+        height: calc(100vh - 60px);
+        width: 100vw;
+        overflow-x: scroll;
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        &-dots {
+            display: none;
+        }
+    }
+}

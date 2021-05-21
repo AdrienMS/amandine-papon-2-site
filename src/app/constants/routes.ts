@@ -1,0 +1,11 @@
+export const SERVICES = '/services';
+export const LOGIN = '/login';
+export const ADMIN = '/admin';
+export const ADMIN_MEDIA = '/admin/media';
+export const ADMIN_BANNER = '/admin/banner';
+export const ADMIN_SERVICES = '/admin/services';
+export const ADMIN_ABOUT = '/admin/about';
+export const ADMIN_COMPANIES = '/admin/companies';
+export const ADMIN_LOCATION = '/admin/location';
+export const ADMIN_CONTACT = '/admin/contact';
+export const HOME = '/';

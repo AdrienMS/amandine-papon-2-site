@@ -1,0 +1,52 @@
+.header {
+    &-head {
+        width: 100%;
+        margin: 20px 0;
+        min-height: 36px;
+        padding: 0 10%;
+        .header-head-logo {
+            width: 80%;
+        }
+    }
+    &-content {
+        list-style: none;
+        margin-block: 0;
+        padding-inline: 0;
+        .header-content {
+            &-item {
+                min-height: 34px;
+                list-style: none;
+                color: #aaa;
+            }
+            &-link {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.3;
+                padding: 0;
+                vertical-align: middle;
+            }
+        }
+    }
+    &-footer {
+        position: absolute;
+        bottom: 0;
+        button {
+            height: 34px;
+            font-size: 14px;
+        }
+    }
+    svg {
+        width: 36px;
+        margin: 0;
+        vertical-align: middle;
+    }
+    &.close {
+        .header {
+            &-content, &-footer {
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}

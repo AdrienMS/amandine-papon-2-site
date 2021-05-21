@@ -1,0 +1,34 @@
+.admin {
+    position: relative;
+    display: inline-flex;
+    &-header {
+        width: 160px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: #23282d;
+        transition: .2s;
+    }
+    &-container {
+        width: calc(99vw - 160px);
+        margin-left: 160px;
+        transition: .2s;
+        .title {
+            padding-left: 20px;
+            font-size: 2em;
+        }
+    }
+    &.close {
+        .admin {
+            &-header {
+                width: 36px;
+            }
+            &-container {
+                width: calc(99vw - 36px);
+                margin-left: 36px;
+            }
+        }
+    }
+}

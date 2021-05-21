@@ -1,0 +1,55 @@
+@import '../../../../assets/style/theme.scss';
+
+.services-admin {
+    width: 100%;
+    &-informations {
+        width: 90%;
+        margin: 0 5% 30px 5%;
+    }
+    &-panels {
+        width: 80%;
+        margin: 20px 10%;
+    }
+}
+
+.services-admin-panels {
+    &-buttons {}
+    &-button {
+        cursor: pointer;
+        background-color: $background;
+        padding: 10px;
+        border: none;
+        border-radius: 10px 10px 0 0;
+        margin: 0 3px;
+        color: #000;
+        transition: .2s;
+        &.selected {
+            background-color: #fff;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 36px;
+                background-color: black;
+                z-index: -1;
+                filter: blur(5px);
+            }
+        }
+        &:first-child {
+            margin: 0 3px 0 0;
+        }
+        &:hover {
+            background-color: $primary;
+            color: #fff;
+        }
+    }
+    &-panel {
+        background-color: #fff;
+        box-shadow: 0px 0px 10px 2px #000000b0;
+        padding: 20px 0;
+        border-radius: 0 10px 10px 10px;
+    }
+}

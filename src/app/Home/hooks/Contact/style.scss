@@ -1,0 +1,17 @@
+@import '../../../../assets/style/theme.scss';
+
+.contact {
+    width: 40%;
+    padding: 0 10%;
+    margin: 5vh 0;
+    .title {
+        color: $primary;
+        text-align: center;
+    }
+}
+
+@media (max-width: 940px) {
+    .contact {
+        width: 80%;
+    }
+}

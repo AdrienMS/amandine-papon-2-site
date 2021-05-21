@@ -1,0 +1,33 @@
+@keyframes loadingAnimation {
+    0% {
+        left: -30%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.loading-element {
+    content: '';
+    margin: 0 auto;
+    background-color: #eee;
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        top: -1em;
+        bottom: -1em;
+        width: 30%;
+        transform: rotate(15deg);
+        background-image: linear-gradient(to right, #eee, #fff, #eee);
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: loadingAnimation;
+    }
+    &.rounded {
+        border-radius: 5px;
+    }
+}

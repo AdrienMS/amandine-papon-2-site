@@ -3,19 +3,35 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^27.1.0",
+    "@ckeditor/ckeditor5-react": "^3.0.2",
+    "@react-google-maps/api": "^2.1.1",
     "@reduxjs/toolkit": "^1.2.5",
-    "@testing-library/jest-dom": "^4.2.4",
+    "@syncfusion/ej2-react-richtexteditor": "^19.1.57",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/draft-js": "^0.11.1",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.7",
+    "@types/testing-library__jest-dom": "^5.9.5",
+    "browser-image-compression": "^1.0.14",
+    "draft-js": "^0.11.7",
+    "firebase": "^8.3.2",
+    "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-lazy-load-image-component": "^1.5.1",
     "react-redux": "^7.2.0",
+    "react-redux-firebase": "^3.10.0",
+    "react-router-dom": "^5.2.0",
+    "react-rte": "^0.16.3",
     "react-scripts": "4.0.3",
+    "react-transition-group": "^4.4.1",
+    "recompose": "^0.17.0",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-firestore": "^0.15.0",
     "typescript": "~3.8.2"
   },
   "scripts": {
@@ -25,7 +41,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -38,5 +57,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@editorjs/editorjs": "^2.21.0",
+    "@editorjs/paragraph": "^2.8.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@types/react": "^16.14.5",
+    "@types/react-dom": "^16.9.11",
+    "@types/react-lazy-load-image-component": "^1.5.1",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/react-rte": "^0.16.1",
+    "@types/react-transition-group": "^4.4.1",
+    "@types/recompose": "^0.30.7",
+    "react-editor-js": "^1.9.0"
   }
 }

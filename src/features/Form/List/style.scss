@@ -1,0 +1,17 @@
+@import '../../../assets/style/theme.scss';
+
+.form-list {
+    width: 100%;
+    tr {
+        width: 100%;
+    }
+    &-delete {
+        color: $red;
+        text-align: center;
+    }
+    &-delete-icon {
+        cursor: pointer;
+        margin-top: 31px;
+        transform: translateY(-50%);
+    }
+}

@@ -1,0 +1,82 @@
+@import '../../../../assets/style/theme.scss';
+
+.about {
+    width: 100%;
+    shape-outside: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0% 100%);
+    clip-path: polygon(0 25vh, 100% 0, 100% calc(100% - 25vh), 0% 100%);
+    background-color: $primary;
+    position: relative;
+    z-index: 1;
+    &-container {
+        padding: 25vh 15% 0 15%;
+        shape-outside: polygon(0 25vh, 100% 5vh, 100% calc(100% - 25vh), 0% calc(100% - 5vh));
+        clip-path: polygon(0 25vh, 100% 5vh, 100% calc(100% - 25vh), 0% calc(100% - 5vh));
+        background-color: #6d6e70;
+        color: #fff;
+        text-align: center;
+        .title {
+            color: $primary;
+        }
+        .description {
+            width: 80%;
+            margin: 0 10%;
+            padding-bottom: 25vh;
+            &-photo {
+                display: block;
+                width: 100vw;
+                height: 100%;
+                object-fit: cover;
+                position: fixed;
+                top: 0;
+                left: 0;
+                filter: brightness(0.7);
+                z-index: -2;
+            }
+            &-photo-profil {
+                display: block;
+                width: 40vw;
+                min-height: 50vh;
+                object-fit: cover;
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                filter: brightness(0.7);
+                z-index: -1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .about {
+        &-container {
+            padding: 25vh 5% 0 5%;
+            .description {
+                width: 100%;
+                margin: 0 0;
+                &-photo-profil {
+                    width: 50vw;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        &-container {
+            .sub-title {
+                font-size: 1.5em;
+            }
+            .description {
+                .text {
+                    font-size: 1em;
+                }
+                &-photo-profil {
+                    width: auto;
+                    height: 50vw;
+                }
+            }
+        }
+    }
+}

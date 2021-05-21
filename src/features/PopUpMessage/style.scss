@@ -1,0 +1,26 @@
+@import '../../assets/style/theme.scss';
+
+.popup {
+    width: 40vw;
+    margin: 0 30vw 20px 30vw;
+    background-color: $background-dark;
+    display: inline-flex;
+    padding: 15px 10px;
+    border-radius: 10px;
+    &-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        &.green {
+            color: $green;
+        }
+        &.red {
+            color: $red;
+        }
+    }
+    &-text {
+        width: calc(100% - 30px);
+        color: #fff;
+        margin-block: 0;
+    }
+}

@@ -1,0 +1,79 @@
+@import '../../../../assets/style/theme.scss';
+
+.banner {
+    height: 80vh;
+    width: 100%;
+    shape-outside: polygon(0 0, 100% 0, 100% 60vh, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0% 100%);
+    background-color: $primary;
+    position: relative;
+    &-photo {
+        display: block;
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+        position: fixed;
+        top: 0;
+        left: 0;
+        filter: brightness(0.7);
+        z-index: -1;
+    }
+    .container-image {
+        height: 75vh;
+        shape-outside: polygon(0 0, 100% 0, 100% 60vh, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 60vh, 0% 100%);
+    }
+    .container-title {
+        position: absolute;
+        top: 37.5vh;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+        .title, .sub-title {
+            color: #fff;
+        }
+        h2.sub-title {
+            color: $primary;
+        }
+    }
+}
+
+@media (max-height: 600px) {
+    .banner {
+        height: 120vh;
+        shape-outside: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+        .container-image {
+            height: 115vh;
+            shape-outside: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+        }
+        .container-title {
+            top: 50vh;
+        }
+    }
+}
+
+@media (max-width: 1150px) {
+    .banner {
+        &-photo {
+            object-position: left;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        height: 120vh;
+        shape-outside: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+        .container-image {
+            height: 115vh;
+            shape-outside: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100vh, 0% 100%);
+        }
+        .container-title {
+            top: 50vh;
+        }
+    }
+}

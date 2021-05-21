@@ -1,0 +1,12 @@
+.contact-and-location {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: -10vh;
+    width: 100%;
+}
+
+@media (max-width: 940px) {
+    .contact-and-location {
+        flex-wrap: wrap-reverse;
+    }
+}

@@ -1,0 +1,42 @@
+@import '../../../../assets/style/theme.scss';
+
+.location {
+    position: relative;
+    width: 40%;
+    margin-top: -20vh;
+    z-index: -1;
+    &-map {
+        width: 100%;
+        height: 100%;
+        filter: brightness(0.7);
+    }
+    &-places {
+        position: absolute;
+        width: 80%;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        text-align: center;
+        z-index: 1;
+        .title {
+            color: $primary;
+        }
+        .text {
+            color: #fff;
+        }
+    }
+}
+
+@media (max-width: 940px) {
+    .location {
+        width: 100%;
+        height: 100vh;
+        shape-outside: polygon(0 0, 100% 0, 100% calc(100% - 25vh), 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25vh), 0% 100%);
+        background-color: $primary;
+        &-map {
+            shape-outside: polygon(0 0, 100% 0, 100% calc(100% - 25vh), 0% calc(100% - 5vh));
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25vh), 0% calc(100% - 5vh));
+        }
+    }
+}
